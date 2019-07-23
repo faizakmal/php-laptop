@@ -11,9 +11,9 @@
   <title>Jual Laptop</title>
 
   <!-- Bootstrap core CSS -->
- 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous"></head>
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <!-- Custom styles for this template -->
@@ -55,9 +55,6 @@
               <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
             </li>
             </li>
-            <form class="form-inline my-2 my-lg-0">
-      			<input class="form-control mr-sm-2" id="myInput" type="search" placeholder="Search" aria-label="Search">
-    		</form>
           </ul>
         </div>
       </nav>
@@ -70,7 +67,7 @@
   			</ol>
 		</nav>
         <h1 class="mt-4">Laptop</h1>
-        <table class="table">
+        <table id="example" class="table table-striped table-bordered">
   			<thead class="thead-dark">
     			<tr>
       				<th scope="col">#</th>
@@ -78,14 +75,21 @@
       				<th scope="col">Price</th>
     			</tr>
   			</thead>
-  			<tbody id="myTable">
+  			<tbody>
     			 <?php   include 'getData.php'; ?>
  			</tbody>
 		</table>
       </div>
+      <footer class="page-footer font-small blue pt-5">
+    	<div class="footer-copyright text-center text-black-50 py-3">© 2019 Copyright:
+    	<a class="dark-grey-text" href="#"> Faiz Kalkun</a>
+  </div>
+  <!-- Copyright -->
+
+</footer>
     </div>
     <!-- /#page-content-wrapper -->
-
+    
   </div>
   <!-- /#wrapper -->
 
@@ -95,22 +99,22 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-  
+  <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+  <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+
+
   <script>
   	//menu toogle
     $("#menu-toggle").click(function(e) {
       e.preventDefault();
       $("#wrapper").toggleClass("toggled");
     });
-    //auto search
-    $(document).ready(function(){
-  		$("#myInput").on("keyup", function() {
-    	var value = $(this).val().toLowerCase();
-    	$("#myTable tr").filter(function() {
-      	$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-    	});
-  	});
-	});
+
+	//paganitation 
+	$(document).ready(function() {
+    	$('#example').DataTable();
+	} );
   </script>
 
 
