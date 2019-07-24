@@ -9,10 +9,17 @@
  //echo "<br/>";
 
  	for($a=0; $a < count($datas['data']); $a++){
-    	print "<tr>";
-    	print "<td>".$datas['data'][$a]['i']."</td>";
-    	print "<td>".$datas['data'][$a]['title']."</td>";
-    	print "<td> Rp. ".$datas['data'][$a]['prices']."</td>";
-    	print "</tr>";
+ 		$nomor [] = $datas['data'][$a]['i'];
+ 		$nama [] = $datas['data'][$a]['title'];
+ 		$harga [] = $datas['data'][$a]['prices'];
+
+    		print "<tr>";
+    		print "<td>".$nomor[$a]."</td>";
+    		print "<td>".$nama[$a]."</td>";
+    		print "<td> Rp. ".$harga[$a]."</td>";
+    		print "</tr>";	
+
    	}
+
+
 ?>
