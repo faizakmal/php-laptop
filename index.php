@@ -82,7 +82,7 @@
       </div>
       <footer class="page-footer font-small blue pt-5">
     	<div class="footer-copyright text-center text-black-50 py-3">© 2019 Copyright:
-    	<a class="dark-grey-text" href="#"> Faiz Kalkun</a>
+    	<a class="dark-grey-text" href="#"> Viraindo</a>
   </div>
   <!-- Copyright -->
 
